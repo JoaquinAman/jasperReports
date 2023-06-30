@@ -24,16 +24,12 @@ public class HouseSeeder implements CommandLineRunner{
         }
 
         private void loadHousesSeed() {
-            houseRepository.save(buildHouse(1L, "name1", "address1"));
-            houseRepository.save(buildHouse(2L, "name2", "address2"));
-            houseRepository.save(buildHouse(3L, "name3", "address3"));
-            houseRepository.save(buildHouse(4L, "name4", "address4"));
-            houseRepository.save(buildHouse(5L, "name5", "address5"));
-            houseRepository.save(buildHouse(6L, "name6", "address6"));
-            houseRepository.save(buildHouse(7L, "name7", "address7"));
+            for (int i = 1; i <= 10; i++) {
+                houseRepository.save(buildHouse("name " + i, "address " + i));
+            }
         }
 
-        private House buildHouse(long id, String name, String address) {
+        private House buildHouse(String name, String address) {
             return new House(
                     name,
                     address);

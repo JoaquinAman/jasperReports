@@ -2,6 +2,7 @@ package com.example.jasperreporttest.controller;
 
 import com.example.jasperreporttest.model.HouseRequest;
 import com.example.jasperreporttest.model.HouseResponse;
+import com.example.jasperreporttest.model.ReportRequest;
 import com.example.jasperreporttest.service.IHouseService;
 import com.example.jasperreporttest.service.IReportService;
 import net.sf.jasperreports.engine.JRException;
@@ -22,6 +23,10 @@ public class HouseController {
     @GetMapping("/report/{format}")
     public String generateReport(@PathVariable String format) throws JRException, FileNotFoundException {
         return reportService.exportReport(format);
+    }
+    @GetMapping("/report")
+    public String generateReport(@RequestBody ReportRequest reportRequest) throws JRException, FileNotFoundException {
+        return reportService.exportReport(reportRequest);
     }
     @GetMapping
     public List<HouseResponse> getAll(){

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="housesAndText" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17c5107a-27d7-4604-8de6-be81cfe36b30">
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+    <queryString language="SQL">
+        <![CDATA[select * from orders]]>
+    </queryString>
+    <field name="ORDERID" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="ORDERID"/>
+        <property name="com.jaspersoft.studio.field.label" value="ORDERID"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+    </field>
+    <field name="CUSTOMERID" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="CUSTOMERID"/>
+        <property name="com.jaspersoft.studio.field.label" value="CUSTOMERID"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+    </field>
+    <field name="EMPLOYEEID" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="EMPLOYEEID"/>
+        <property name="com.jaspersoft.studio.field.label" value="EMPLOYEEID"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="309" splitType="Stretch">
+            <areaChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="40" y="-10" width="200" height="200" uuid="6ba4e3bc-13ac-45df-bc00-5be1a8533f62"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[0]]></categoryExpression>
+                        <valueExpression><![CDATA[0]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <areaPlot>
+                    <plot/>
+                    <categoryAxisFormat>
+                        <axisFormat/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat/>
+                    </valueAxisFormat>
+                </areaPlot>
+            </areaChart>
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="300" y="10" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[0]]></categoryExpression>
+                        <valueExpression><![CDATA[0]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot>
+                    <plot/>
+                    <itemLabel/>
+                    <categoryAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </valueAxisFormat>
+                </barPlot>
+            </barChart>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="298" splitType="Stretch">
+            <lineChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="50" y="70" width="200" height="200" uuid="c2c9ecec-eac0-47bb-b253-5ed1e04dc747"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[0]]></categoryExpression>
+                        <valueExpression><![CDATA[0]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <linePlot>
+                    <plot/>
+                    <categoryAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </valueAxisFormat>
+                </linePlot>
+            </lineChart>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

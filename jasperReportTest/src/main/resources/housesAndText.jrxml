@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="housesAndText" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17c5107a-27d7-4604-8de6-be81cfe36b30">
+
+<!--    postman:-->
+<!--    {-->
+<!--        "reportFormat": "pdf" ,-->
+<!--        "myText": "texto desde postman",-->
+<!--        "image":{-->
+<!--            "valores": [],-->
+<!--            "timestamps": []-->
+<!--        }-->
+<!--    }-->
+    <field name="house.id" class="java.lang.Long">
+    </field>
+    <field name="house.name" class="java.lang.String">
+    </field>
+    <field name="house.address" class="java.lang.String">
+    </field>
+    <field name="myText" class="java.lang.String"></field>
+    <field name="color" class="java.lang.String"></field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+
+    <band height="79" splitType="Stretch">
+        <rectangle>
+            <reportElement x="180" y="13" width="195" height="40"  uuid="5ec0a1c0-98ac-4382-ada8-365fd31ada98">
+                <propertyExpression name="net.sf.jasperreports.style.backcolor">$F{color}</propertyExpression>
+            </reportElement>
+        </rectangle>
+        <textField>
+            <reportElement x="245" y="28" width="100" height="30" uuid="bb98f62e-6e70-45eb-b789-4cde24530dbf"/>
+            <textFieldExpression><![CDATA["housesAndText"]]></textFieldExpression>
+        </textField>
+    </band>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+
+    </columnHeader>
+    <detail>
+
+        <band height="309" splitType="Stretch">
+
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="300" y="0" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[1]]></categoryExpression>
+                        <valueExpression><![CDATA[2]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>
+                        <categoryExpression><![CDATA[3]]></categoryExpression>
+                        <valueExpression><![CDATA[4]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot>
+                    <plot/>
+                    <itemLabel/>
+                    <categoryAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </valueAxisFormat>
+                </barPlot>
+            </barChart>
+
+            <lineChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="50" y="0" width="200" height="200" uuid="c2c9ecec-eac0-47bb-b253-5ed1e04dc747"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[1]]></categoryExpression>
+                        <valueExpression><![CDATA[2]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[7]]></categoryExpression>
+                        <valueExpression><![CDATA[8]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>
+                        <categoryExpression><![CDATA[3]]></categoryExpression>
+                        <valueExpression><![CDATA[4]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>
+                        <categoryExpression><![CDATA[5]]></categoryExpression>
+                        <valueExpression><![CDATA[6]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <linePlot>
+                    <plot/>
+                    <categoryAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </valueAxisFormat>
+                </linePlot>
+            </lineChart>
+        </band>
+
+
+        <band height="125" splitType="Stretch">
+            <textField>
+                <reportElement x="240" y="0" width="100" height="30" uuid="b2b0b2a3-2b0e-4b0e-9b0a-5b0b0b0b0b0b"/>
+                <textFieldExpression><![CDATA[$F{myText}]]></textFieldExpression>
+            </textField>
+        </band>
+<!--        <band height="298" splitType="Stretch">-->
+<!--            <lineChart>-->
+<!--                <chart evaluationTime="Report">-->
+<!--                    <reportElement x="50" y="70" width="200" height="200" uuid="c2c9ecec-eac0-47bb-b253-5ed1e04dc747"/>-->
+<!--                    <chartTitle/>-->
+<!--                    <chartSubtitle/>-->
+<!--                    <chartLegend/>-->
+<!--                </chart>-->
+<!--                <categoryDataset>-->
+<!--                    <categorySeries>-->
+<!--                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>-->
+<!--                        <categoryExpression><![CDATA[1]]></categoryExpression>-->
+<!--                        <valueExpression><![CDATA[2]]></valueExpression>-->
+<!--                    </categorySeries>-->
+<!--                    <categorySeries>-->
+<!--                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>-->
+<!--                        <categoryExpression><![CDATA[7]]></categoryExpression>-->
+<!--                        <valueExpression><![CDATA[8]]></valueExpression>-->
+<!--                    </categorySeries>-->
+<!--                    <categorySeries>-->
+<!--                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>-->
+<!--                        <categoryExpression><![CDATA[3]]></categoryExpression>-->
+<!--                        <valueExpression><![CDATA[4]]></valueExpression>-->
+<!--                    </categorySeries>-->
+<!--                    <categorySeries>-->
+<!--                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>-->
+<!--                        <categoryExpression><![CDATA[5]]></categoryExpression>-->
+<!--                        <valueExpression><![CDATA[6]]></valueExpression>-->
+<!--                    </categorySeries>-->
+<!--                </categoryDataset>-->
+<!--                <linePlot>-->
+<!--                    <plot/>-->
+<!--                    <categoryAxisFormat>-->
+<!--                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>-->
+<!--                    </categoryAxisFormat>-->
+<!--                    <valueAxisFormat>-->
+<!--                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>-->
+<!--                    </valueAxisFormat>-->
+<!--                </linePlot>-->
+<!--            </lineChart>-->
+<!--        </band>-->
+
+        <band height="20">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="b51181a3-146f-4480-a61f-94cd3d732454"/>
+            </line>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="0" y="0" width="185" height="20" uuid="fa2003f1-babf-4b18-b7a8-dc345ab8850a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ecdd68b4-7d73-4d90-a50c-496860d048c6"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{house.id}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="185" y="0" width="185" height="20" uuid="07d3f524-63ef-4769-a07f-31e8cc199ec6">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e398b1c-00cb-4f9c-9246-05e8587b73c4"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{house.name}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="370" y="0" width="185" height="20" uuid="1c35bfe2-9e20-43f6-a058-102e46beade0">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61d34c89-e436-45c0-a879-9c200b887b3e"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{house.address}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
