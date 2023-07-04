@@ -13,4 +13,7 @@ public class ReportRequest {
     private String image;
     private House house;
     private String color;
+    private String chartType;
+    private int chartValue;
+    private Boolean mostrarTexto;
 }

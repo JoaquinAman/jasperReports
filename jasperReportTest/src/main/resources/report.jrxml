@@ -11,6 +11,10 @@
 <!--            "timestamps": []-->
 <!--        }-->
 <!--    }-->
+<!--    <parameter name="posicionY" class="java.lang.Integer"/>-->
+<!--    <parameter name="posicionX" class="java.lang.Integer"/>-->
+    <import value="java.util.*" />
+    <import value="java.awt.*" />
     <field name="house.id" class="java.lang.Long">
     </field>
     <field name="house.name" class="java.lang.String">
@@ -19,7 +23,19 @@
     </field>
     <field name="myText" class="java.lang.String"></field>
     <field name="color" class="java.lang.String"></field>
-
+    <field name="chartType" class="java.lang.String"></field>
+    <field name="chartValue" class="java.lang.String"></field>
+    <field name="mostrarTexto" class="java.lang.Boolean"/>
+<!--    <field name="fieldInPixels" class="java.lang.Integer"/>-->
+<!--    <field name="bufferedImage" class="java.awt.image.BufferedImage"/>-->
+<!--    <field name="posicionX" class="java.lang.Integer"/>-->
+<!--    <field name="posicionY" class="java.lang.Integer"/>-->
+<!--    <variable name="posicionCalculada" class="java.lang.Integer" calculation="Nothing">-->
+<!--        <variableExpression><![CDATA[$P{posicionX}]]></variableExpression>-->
+<!--    </variable>-->
+<!--    <parameter name="posicionY" class="java.lang.Integer"/>-->
+<!--    <parameter name="posicionX" class="java.lang.Integer"/>-->
+<!--    <parameter name="myText" class="java.lang.String"/>-->
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -33,7 +49,7 @@
         </rectangle>
         <textField>
             <reportElement x="245" y="28" width="100" height="30" uuid="bb98f62e-6e70-45eb-b789-4cde24530dbf"/>
-            <textFieldExpression><![CDATA["housesAndText"]]></textFieldExpression>
+            <textFieldExpression><![CDATA["report"]]></textFieldExpression>
         </textField>
     </band>
     </title>
@@ -46,11 +62,48 @@
     </columnHeader>
     <detail>
 
-        <band height="309" splitType="Stretch">
+        <band height="309" >
+<!--            ($F{mostrarTexto} == true ? "a" : "b")-->
+            <textField>
+<!--                stretchType="RelativeToTallestObject" positionType="Float"-->
+                <reportElement x="0" y="0" width="100" height="100"  uuid="bb98f62e-6e70-45eb-b789-4cde24530dbf"/>
+                <textFieldExpression><![CDATA[$F{myText}]]></textFieldExpression>
+            </textField>
 
+            <textField>
+                <reportElement x="0" y="100" width="100" height="100" uuid="c6997d2b-2837-43e7-8d5b-08dd92658942"/>
+                <textFieldExpression>
+<!--                    <![CDATA[$F{myText}]]>                  -->
+                    ($F{mostrarTexto} == true ? "a" : "b")
+                </textFieldExpression>
+            </textField>
+        </band>
+
+
+        <!--              splitType="Stretch"-->
+        <band height="309">
+
+<!--            ($F{mostrarTexto} == true ? $F{mostrarTexto} == true : $F{mostrarTexto} == true)-->
             <barChart>
-                <chart evaluationTime="Report">
-                    <reportElement x="300" y="0" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>
+                <chart evaluationTime="Report" >
+<!--                    <reportElement x="300" y="0" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>-->
+<!--                    <reportElement positionType="Float"  x="50"                 y="0" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>-->
+<!--                                           "$P{posicionCalculada}" -->
+
+                    <reportElement x="50" y="0" width="200" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>
+<!--                        x=($F{mostrarTexto} == true ? $F{posicionX} : $F{posicionX})-->
+
+
+
+
+<!--                            x=-->
+<!--                        ($F{mostrarTexto} == true ? $F{posicionX} : $F{posicionX})-->
+
+
+
+<!--                    <reportElement x="10" y="0" width="700" height="200" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>-->
+<!--                    <reportElement x="300" y="0" width="0" height="0" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>-->
+<!--                    <reportElement x="10" y="10" width="10" height="10" uuid="625a8c94-2516-4ffb-be3d-dd34da2dc467"/>-->
                     <chartTitle/>
                     <chartSubtitle/>
                     <chartLegend/>
@@ -61,17 +114,28 @@
                         <categoryExpression><![CDATA[1]]></categoryExpression>
                         <valueExpression><![CDATA[2]]></valueExpression>
                     </categorySeries>
+
                     <categorySeries>
                         <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>
                         <categoryExpression><![CDATA[3]]></categoryExpression>
                         <valueExpression><![CDATA[4]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+                        <categoryExpression><![CDATA[5]]></categoryExpression>
+                        <valueExpression><![CDATA[6]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["SERIES 2"]]></seriesExpression>
+                        <categoryExpression><![CDATA[5]]></categoryExpression>
+                        <valueExpression><![CDATA[6]]></valueExpression>
                     </categorySeries>
                 </categoryDataset>
                 <barPlot>
                     <plot/>
                     <itemLabel/>
                     <categoryAxisFormat>
-                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                        <axisFormat  labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
                     </categoryAxisFormat>
                     <valueAxisFormat>
                         <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
@@ -81,7 +145,7 @@
 
             <lineChart>
                 <chart evaluationTime="Report">
-                    <reportElement x="50" y="0" width="200" height="200" uuid="c2c9ecec-eac0-47bb-b253-5ed1e04dc747"/>
+                    <reportElement x="300" y="0" width="200" height="200" uuid="c2c9ecec-eac0-47bb-b253-5ed1e04dc747"/>
                     <chartTitle/>
                     <chartSubtitle/>
                     <chartLegend/>
@@ -205,8 +269,25 @@
     <columnFooter>
         <band height="45" splitType="Stretch"/>
     </columnFooter>
+<!--    <pageFooter>-->
+<!--        <band height="54" splitType="Stretch"/>-->
+<!--    </pageFooter>-->
     <pageFooter>
-        <band height="54" splitType="Stretch"/>
+        <band height="17">
+            <textField>
+                <reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="9d4ad956-9357-4086-ba20-b55d4d648d79"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="8db389b1-706b-497e-8db1-fcee8c7b37a3"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="0" y="4" width="100" height="13" uuid="f0b62b03-d87c-4c1e-80d4-83467c2ae511"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
     </pageFooter>
     <summary>
         <band height="42" splitType="Stretch"/>

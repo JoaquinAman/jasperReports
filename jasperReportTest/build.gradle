@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-
+	implementation 'net.sf.jasperreports:jasperreports-functions:6.12.2'
 	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
 	implementation group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.1.0'
 //	compile 'net.sf.jasperreports:jasperreports:6.8.0'

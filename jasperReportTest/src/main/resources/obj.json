@@ -1,0 +1,79 @@
+{
+  "reportFormat": "pdf" ,
+  "colorStyles": "poseidon",
+  "myText": {
+    "textValue": "texto desde postman",
+    "x": 100,
+    "y": 100,
+    "height": 100,
+    "width": 100
+  },
+  "barChart": {
+    "x": 100,
+    "y": 100,
+    "height": 100,
+    "width": 100,
+    "dataSerie1": [
+      {
+        "categoryExpression": 1,
+        "valueExpression": 1
+      },
+      {
+        "categoryExpression": 2,
+        "valueExpression": 2
+      },
+      {
+        "categoryExpression": 3,
+        "valueExpression": 3
+      }
+    ],
+    "dataSerie2": [
+      {
+        "categoryExpression": 4,
+        "valueExpression": 4
+      },
+      {
+        "categoryExpression": 5,
+        "valueExpression": 5
+      },
+      {
+        "categoryExpression": 6,
+        "valueExpression": 6
+      }
+    ]
+  },
+  "lineChar": {
+    "x": 100,
+    "y": 100,
+    "height": 100,
+    "width": 100,
+    "dataSerie1": [
+      {
+        "categoryExpression": 1,
+        "valueExpression": 1
+      },
+      {
+        "categoryExpression": 2,
+        "valueExpression": 2
+      },
+      {
+        "categoryExpression": 3,
+        "valueExpression": 3
+      }
+    ],
+    "dataSerie2": [
+      {
+        "categoryExpression": 4,
+        "valueExpression": 4
+      },
+      {
+        "categoryExpression": 5,
+        "valueExpression": 5
+      },
+      {
+        "categoryExpression": 6,
+        "valueExpression": 6
+      }
+    ]
+  }
+}
